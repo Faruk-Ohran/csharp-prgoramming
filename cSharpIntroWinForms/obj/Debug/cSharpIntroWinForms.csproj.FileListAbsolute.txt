@@ -1,0 +1,9 @@
+C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\bin\Debug\cSharpIntroWinForms.exe.config
+C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\bin\Debug\cSharpIntroWinForms.exe
+C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\bin\Debug\cSharpIntroWinForms.pdb
+C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.csprojAssemblyReference.cache
+C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.Properties.Resources.resources
+C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.csproj.GenerateResource.cache
+C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.exe
+C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.pdb
+C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.Form1.resources

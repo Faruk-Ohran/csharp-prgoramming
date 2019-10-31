@@ -1,5 +1,6 @@
 ﻿using cSharpIntro.P1;
 using cSharpIntro.P2;
+using cSharpIntro.P3;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +11,7 @@ namespace cSharpIntro
       
         static void Main(string[] args)
         {
-            MainP2.Run();
+            MainP3.Run();
             Console.ReadKey();
         }
     }
