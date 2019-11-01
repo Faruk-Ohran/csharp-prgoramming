@@ -4,9 +4,8 @@ using System.Text;
 
 namespace cSharpIntro.P3
 {
-    interface IPristojnost
+    class DAUcenik : Baza<Ucenik> 
     {
-        string PredstaviSe();
-    }    
-    
+
+    }
 }

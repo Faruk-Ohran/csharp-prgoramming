@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace cSharpIntroWinForms
 {
-    public partial class Form1 : Form
+    public partial class XO : Form
     {
         public int Brojac { get; set; }
-        public Form1()
+        public XO()
         {
             InitializeComponent();
         }
@@ -72,6 +72,11 @@ namespace cSharpIntroWinForms
         private void btn9_Click(object sender, EventArgs e)
         {
             PromijeniVrijednost(sender);
+        }
+
+        private void XO_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -4,9 +4,8 @@ using System.Text;
 
 namespace cSharpIntro.P3
 {
-    interface IPristojnost
+    class DBKonekcija
     {
-        string PredstaviSe();
-    }    
-    
+        public void SpasiUBazu(object obj) { }
+    }
 }

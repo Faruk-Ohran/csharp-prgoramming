@@ -15,9 +15,4 @@ namespace cSharpIntro.P3
         public T GetById(int id){ return null; }
         public int Insert(T obj) { return 0; }
     }
-    class DAStudent: Baza<Student> { }
-    class DAUcenik : Baza<Ucenik> { 
-        
-    }
-
 }

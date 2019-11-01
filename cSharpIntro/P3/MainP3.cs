@@ -9,14 +9,17 @@ namespace cSharpIntro.P3
 
         public static void Run()
         {
-            //PrikaziPodatke(new Student());
-            //DemonstrirajLogiranje(new DBLogger());
+            //PrikaziPodatke();
+            //DemonstrirajLogiranje();
             //DemonstrirajTemplateMetodu();
-            DemonstrirajTemplateKlase();
+            //DemonstrirajTemplateKlase();
         }
 
         private static void DemonstrirajTemplateKlase()
         {
+
+            //Baza<int> valueVrijednosti = new Baza<int>();//u klasi smo naveli da T mogu biti samo reference
+
             DAStudent daStudent = new DAStudent();
             
             Student student = daStudent.GetById(150051);
@@ -26,7 +29,7 @@ namespace cSharpIntro.P3
 
         }
 
-        static void Zamijeni<T>(ref T a, ref T b)
+        private static void Zamijeni<T>(ref T a, ref T b)
         {
             T temp = a;
             a = b;
@@ -41,11 +44,17 @@ namespace cSharpIntro.P3
             Console.WriteLine($"{a} {b}");
         }
 
-        private static void DemonstrirajLogiranje(ILogger logger)
+        private static void DemonstrirajLogiranje()
+        {
+            MetodaUKojojNastajeIzuzetak(new FileLogger());
+            MetodaUKojojNastajeIzuzetak(new DBLogger());
+        }
+
+        private static void MetodaUKojojNastajeIzuzetak(ILogger logger)
         {
             try
             {
-                throw new NotImplementedException("Ova metoda jos nije implementirana");
+                throw new NotImplementedException($"{DateTime.Now.ToString()} -> Servis nije dostuopan...");
             }
             catch (Exception ex)
             {
@@ -53,7 +62,13 @@ namespace cSharpIntro.P3
             }
         }
 
-        private static void PrikaziPodatke(IPristojnost pristojnost)
+        private static void PrikaziPodatke()
+        {
+            PredstaviSe(new Student());
+            PredstaviSe(new Ucenik());
+        }
+
+        private static void PredstaviSe(IPristojnost pristojnost)
         {
             Console.WriteLine(pristojnost.PredstaviSe());
         }

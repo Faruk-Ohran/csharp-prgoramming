@@ -1,6 +1,6 @@
 ﻿namespace cSharpIntroWinForms
 {
-    partial class Form1
+    partial class XO
     {
         /// <summary>
         /// Required designer variable.
@@ -129,7 +129,7 @@
             this.btn7.UseVisualStyleBackColor = true;
             this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
-            // Form1
+            // XO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -143,8 +143,9 @@
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "XO";
+            this.Text = "XO";
+            this.Load += new System.EventHandler(this.XO_Load);
             this.ResumeLayout(false);
 
         }

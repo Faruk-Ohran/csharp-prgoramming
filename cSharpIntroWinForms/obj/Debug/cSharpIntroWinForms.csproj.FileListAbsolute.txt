@@ -6,4 +6,4 @@ C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.
 C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.csproj.GenerateResource.cache
 C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.exe
 C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.pdb
-C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.Form1.resources
+C:\Users\online\Desktop\PRIII\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.XO.resources
