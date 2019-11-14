@@ -16,7 +16,7 @@ namespace cSharpIntroWinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new XO());
+            Application.Run(new Login());
         }
     }
 }
