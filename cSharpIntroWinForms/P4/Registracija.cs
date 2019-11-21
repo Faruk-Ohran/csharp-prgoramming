@@ -12,34 +12,72 @@ namespace cSharpIntroWinForms
 {
     public partial class Registracija : Form
     {
+        private Korisnik korisnik;
+        public bool Edit { get; set; }
+
         public Registracija()
         {
             InitializeComponent();
+            korisnik = new Korisnik();
+        }
+
+        public Registracija(Korisnik korisnik) : this()
+        {
+            this.korisnik = korisnik;
+            UcitajPodatkeOKorisniku();
+            Edit = true;
+        }
+
+        private void UcitajPodatkeOKorisniku()
+        {
+            try
+            {
+                txtIme.Text = korisnik.Ime;
+                txtPrezime.Text = korisnik.Prezime;
+                txtKorisnickoIme.Text = korisnik.KorisnickoIme;
+                txtLozinka.Text = korisnik.Lozinka;
+                pbSlikaKorisnika.Image = korisnik.Slika;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Greska -> {ex.Message}");
+            }
         }
 
         private void btnSpasi_Click(object sender, EventArgs e)
         {
             if (ValidirajUnos())
             {
-                Korisnik noviKorisnik = new Korisnik()
-                {
-                    Id = DBInMemory.RegistrovaniKorisnici.Count + 1,
-                    Ime = txtIme.Text,
-                    Prezime = txtPrezime.Text,
-                    KorisnickoIme = txtKorisnickoIme.Text,
-                    Lozinka = txtLozinka.Text
-                };
-                DBInMemory.RegistrovaniKorisnici.Add(noviKorisnik);
-                MessageBox.Show("Registracija je uspješna!");
+
+                korisnik.Ime = txtIme.Text;
+                korisnik.Prezime = txtPrezime.Text;
+                korisnik.KorisnickoIme = txtKorisnickoIme.Text;
+                korisnik.Lozinka = txtLozinka.Text;
+                korisnik.Slika = pbSlikaKorisnika.Image;
+                if (!Edit) { 
+                    korisnik.Id = DBInMemory.RegistrovaniKorisnici.Count + 1;
+                    DBInMemory.RegistrovaniKorisnici.Add(korisnik);
+                    MessageBox.Show("Registracija je uspješna!");
+                }
+                else
+                    MessageBox.Show("Editovanje je uspješno!");
+                DialogResult = DialogResult.OK;
                 Close();
             }
         }
 
-       
+
         private bool ValidirajUnos()
         {
+            if (pbSlikaKorisnika.Image == null)
+            {
+                err.SetError(pbSlikaKorisnika, Validator.porObaveznaVrijednost);
+                return false;
+            }
+            else
+                err.Clear();
             return Validator.ObaveznoPolje(txtIme, err, Validator.porObaveznaVrijednost) &&
-                Validator.ObaveznoPolje(txtPrezime, err, Validator.porObaveznaVrijednost);            
+                Validator.ObaveznoPolje(txtPrezime, err, Validator.porObaveznaVrijednost);
         }
 
         private string GenerisiLozinku(int brojZnakova)
@@ -71,6 +109,32 @@ namespace cSharpIntroWinForms
         private void Registracija_Load(object sender, EventArgs e)
         {
             txtLozinka.Text = GenerisiLozinku(12);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            char prazan = new char();
+            if (txtLozinka.PasswordChar == prazan)
+                txtLozinka.PasswordChar = '*';
+            else
+                txtLozinka.PasswordChar = prazan;
+        }
+
+        private void btnUcitajSliku_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ofdUcitajSliku.ShowDialog() == DialogResult.OK)
+                {
+                    string putanjaDoSlike = ofdUcitajSliku.FileName;
+                    Image slika = Image.FromFile(putanjaDoSlike);
+                    pbSlikaKorisnika.Image = slika;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Greska -> {ex.Message}");
+            }
         }
     }
 }

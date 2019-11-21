@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="P6\KorisniciAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P6\KorisniciAdmin.Designer.cs">
+      <DependentUpon>KorisniciAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="P4\DBInMemory.cs" />
     <Compile Include="P4\Korisnik.cs" />
     <Compile Include="Login.cs">
@@ -67,8 +73,15 @@
     <Compile Include="P3\XO.Designer.cs">
       <DependentUpon>XO.cs</DependentUpon>
     </Compile>
+    <Compile Include="P5\Dogadjaj.cs" />
+    <Compile Include="P5\Dogadjaj.Designer.cs">
+      <DependentUpon>Dogadjaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="P6\KorisniciAdmin.resx">
+      <DependentUpon>KorisniciAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -77,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P3\XO.resx">
       <DependentUpon>XO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P5\Dogadjaj.resx">
+      <DependentUpon>Dogadjaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,6 +119,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\secure.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
