@@ -26,9 +26,9 @@ namespace cSharpIntroWinForms
         private void btnDodajKorisnika_Click(object sender, EventArgs e)
         {
             Registracija registracija = new Registracija();
-            if (registracija.ShowDialog() == DialogResult.OK)
+            if (registracija.ShowDialog() == DialogResult.OK) { 
                 LoadData();
-
+            }
         }
 
         private void dgvKorisnici_MouseClick(object sender, MouseEventArgs e)
@@ -49,7 +49,7 @@ namespace cSharpIntroWinForms
             dgvKorisnici.DataSource = korisnici ?? DBInMemory.RegistrovaniKorisnici;
         }
 
-        private void txtPretraga_TextChanged(object sender, EventArgs e)
+        private void txtPretraga_ver1_TextChanged(object sender, EventArgs e)
         {
             string filter = txtPretraga.Text.ToLower();
             List<Korisnik> rezultat = new List<Korisnik>();
@@ -61,5 +61,18 @@ namespace cSharpIntroWinForms
             LoadData(rezultat);
             
         }
+        private void txtPretraga_TextChanged(object sender, EventArgs e)
+        {
+            string filter = txtPretraga.Text.ToLower();
+            List<Korisnik> rezultat =
+                DBInMemory.RegistrovaniKorisnici.Where(
+                    korisnik => korisnik.Ime.ToLower().Contains(filter)
+                    || korisnik.Prezime.ToLower().Contains(filter)).ToList();
+
+            LoadData(rezultat);
+
+        }
+
+
     }
 }

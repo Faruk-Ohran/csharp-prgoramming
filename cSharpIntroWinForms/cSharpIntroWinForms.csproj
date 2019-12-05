@@ -77,6 +77,12 @@
     <Compile Include="P5\Dogadjaj.Designer.cs">
       <DependentUpon>Dogadjaj.cs</DependentUpon>
     </Compile>
+    <Compile Include="P7\LINQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P7\LINQ.Designer.cs">
+      <DependentUpon>LINQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="P6\KorisniciAdmin.resx">
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P5\Dogadjaj.resx">
       <DependentUpon>Dogadjaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P7\LINQ.resx">
+      <DependentUpon>LINQ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
