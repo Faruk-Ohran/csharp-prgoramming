@@ -100,5 +100,5 @@ namespace cSharpIntroWinForms.P7
     }
 
     class AkademskaGodina { }
-    class PolozeniPredmeti { }
+    //class PolozeniPredmeti { }
 }

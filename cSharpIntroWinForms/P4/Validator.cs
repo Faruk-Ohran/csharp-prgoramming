@@ -11,15 +11,34 @@ namespace cSharpIntroWinForms
     {
         public const string porObaveznaVrijednost = "Obavezna vrijednost!";
 
-        public static bool ObaveznoPolje(TextBox textBox, ErrorProvider err, string poruka)
+        public static bool ObaveznoPolje(Control control, ErrorProvider err, string poruka)
         {
-            if (string.IsNullOrEmpty(textBox.Text))
+            bool validno = true;
+            
+            if (control is TextBox && string.IsNullOrEmpty((control as TextBox).Text))
+                validno = false;
+
+            else if (control is ComboBox && (control as ComboBox).SelectedIndex == -1)
+                validno = false;
+
+            if (!validno)
             {
-                err.SetError(textBox, poruka);
+                err.SetError(control, poruka);
                 return false;
             }
+
             err.Clear();
             return true;
         }
+        //public static bool ObaveznoPolje(ComboBox comboBox, ErrorProvider err, string poruka)
+        //{
+        //    if (comboBox.SelectedIndex == -1)
+        //    {
+        //        err.SetError(comboBox, poruka);
+        //        return false;
+        //    }
+        //    err.Clear();
+        //    return true;
+        //}
     }
 }

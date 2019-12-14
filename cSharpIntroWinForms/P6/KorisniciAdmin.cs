@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cSharpIntroWinForms.P8;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,13 +34,7 @@ namespace cSharpIntroWinForms
 
         private void dgvKorisnici_MouseClick(object sender, MouseEventArgs e)
         {
-            Korisnik korisnik = dgvKorisnici.SelectedRows[0].DataBoundItem as Korisnik;
-            if (korisnik != null)
-            {
-                Registracija registracija = new Registracija(korisnik);
-                registracija.ShowDialog();
-                LoadData();
-            }
+           
 
         }
 
@@ -73,6 +68,20 @@ namespace cSharpIntroWinForms
 
         }
 
-
+        private void dgvKorisnici_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            Korisnik korisnik = dgvKorisnici.SelectedRows[0].DataBoundItem as Korisnik;
+            Form forma = null;
+            if (korisnik != null)
+            {
+                if (e.ColumnIndex == 5) 
+                    forma = new KorisniciPolozeniPredmeti(korisnik);                    
+                else 
+                    forma = new Registracija(korisnik);
+                forma.ShowDialog();                
+                LoadData();
+            }
+        }
     }
 }

@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvKorisnici = new System.Windows.Forms.DataGridView();
-            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KorisnickoIme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDodajKorisnika = new System.Windows.Forms.Button();
             this.txtPretraga = new System.Windows.Forms.TextBox();
+            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Spol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KorisnickoIme = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Admin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Polozeni = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,34 +48,18 @@
             this.dgvKorisnici.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ime,
             this.Prezime,
-            this.KorisnickoIme});
+            this.Spol,
+            this.KorisnickoIme,
+            this.Admin,
+            this.Polozeni});
             this.dgvKorisnici.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvKorisnici.Location = new System.Drawing.Point(12, 41);
             this.dgvKorisnici.Name = "dgvKorisnici";
             this.dgvKorisnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKorisnici.Size = new System.Drawing.Size(666, 265);
             this.dgvKorisnici.TabIndex = 0;
+            this.dgvKorisnici.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKorisnici_CellContentClick);
             this.dgvKorisnici.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvKorisnici_MouseClick);
-            // 
-            // Ime
-            // 
-            this.Ime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ime.DataPropertyName = "Ime";
-            this.Ime.HeaderText = "Ime";
-            this.Ime.Name = "Ime";
-            // 
-            // Prezime
-            // 
-            this.Prezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Prezime.DataPropertyName = "Prezime";
-            this.Prezime.HeaderText = "Prezime";
-            this.Prezime.Name = "Prezime";
-            // 
-            // KorisnickoIme
-            // 
-            this.KorisnickoIme.DataPropertyName = "KorisnickoIme";
-            this.KorisnickoIme.HeaderText = "Korisničko ime";
-            this.KorisnickoIme.Name = "KorisnickoIme";
             // 
             // btnDodajKorisnika
             // 
@@ -91,6 +78,45 @@
             this.txtPretraga.Size = new System.Drawing.Size(562, 20);
             this.txtPretraga.TabIndex = 2;
             this.txtPretraga.TextChanged += new System.EventHandler(this.txtPretraga_TextChanged);
+            // 
+            // Ime
+            // 
+            this.Ime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ime.DataPropertyName = "Ime";
+            this.Ime.HeaderText = "Ime";
+            this.Ime.Name = "Ime";
+            // 
+            // Prezime
+            // 
+            this.Prezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Prezime.DataPropertyName = "Prezime";
+            this.Prezime.HeaderText = "Prezime";
+            this.Prezime.Name = "Prezime";
+            // 
+            // Spol
+            // 
+            this.Spol.DataPropertyName = "Spol";
+            this.Spol.HeaderText = "Spol";
+            this.Spol.Name = "Spol";
+            // 
+            // KorisnickoIme
+            // 
+            this.KorisnickoIme.DataPropertyName = "KorisnickoIme";
+            this.KorisnickoIme.HeaderText = "Korisničko ime";
+            this.KorisnickoIme.Name = "KorisnickoIme";
+            // 
+            // Admin
+            // 
+            this.Admin.DataPropertyName = "Admin";
+            this.Admin.HeaderText = "Admin";
+            this.Admin.Name = "Admin";
+            // 
+            // Polozeni
+            // 
+            this.Polozeni.HeaderText = "Polozeni";
+            this.Polozeni.Name = "Polozeni";
+            this.Polozeni.Text = "Polozeni";
+            this.Polozeni.UseColumnTextForButtonValue = true;
             // 
             // KorisniciAdmin
             // 
@@ -113,10 +139,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvKorisnici;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KorisnickoIme;
         private System.Windows.Forms.Button btnDodajKorisnika;
         private System.Windows.Forms.TextBox txtPretraga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Spol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KorisnickoIme;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Admin;
+        private System.Windows.Forms.DataGridViewButtonColumn Polozeni;
     }
 }

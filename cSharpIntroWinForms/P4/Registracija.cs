@@ -19,6 +19,7 @@ namespace cSharpIntroWinForms
         {
             InitializeComponent();
             korisnik = new Korisnik();
+            UcitajSpolove();
         }
 
         public Registracija(Korisnik korisnik) : this()
@@ -37,6 +38,8 @@ namespace cSharpIntroWinForms
                 txtKorisnickoIme.Text = korisnik.KorisnickoIme;
                 txtLozinka.Text = korisnik.Lozinka;
                 pbSlikaKorisnika.Image = korisnik.Slika;
+                cmbSpol.SelectedItem = korisnik.Spol;
+                cbAdmin.Checked = korisnik.Admin;
             }
             catch (Exception ex)
             {
@@ -48,12 +51,14 @@ namespace cSharpIntroWinForms
         {
             if (ValidirajUnos())
             {
-
                 korisnik.Ime = txtIme.Text;
                 korisnik.Prezime = txtPrezime.Text;
                 korisnik.KorisnickoIme = txtKorisnickoIme.Text;
                 korisnik.Lozinka = txtLozinka.Text;
                 korisnik.Slika = pbSlikaKorisnika.Image;
+                korisnik.Spol = cmbSpol.SelectedItem.ToString();
+                korisnik.Admin = cbAdmin.Checked;
+
                 if (!Edit) { 
                     korisnik.Id = DBInMemory.RegistrovaniKorisnici.Count + 1;
                     DBInMemory.RegistrovaniKorisnici.Add(korisnik);
@@ -77,7 +82,8 @@ namespace cSharpIntroWinForms
             else
                 err.Clear();
             return Validator.ObaveznoPolje(txtIme, err, Validator.porObaveznaVrijednost) &&
-                Validator.ObaveznoPolje(txtPrezime, err, Validator.porObaveznaVrijednost);
+                Validator.ObaveznoPolje(txtPrezime, err, Validator.porObaveznaVrijednost) &&
+                Validator.ObaveznoPolje(cmbSpol, err, Validator.porObaveznaVrijednost);
         }
 
         private string GenerisiLozinku(int brojZnakova)
@@ -111,6 +117,11 @@ namespace cSharpIntroWinForms
             txtLozinka.Text = GenerisiLozinku(12);
         }
 
+        private void UcitajSpolove()
+        {
+            cmbSpol.DataSource = DBInMemory.Spolovi;
+        }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             char prazan = new char();
@@ -135,6 +146,15 @@ namespace cSharpIntroWinForms
             {
                 MessageBox.Show($"Greska -> {ex.Message}");
             }
+        }
+
+        private void cmbSpol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Text = cmbSpol.SelectedIndex.ToString();
         }
     }
 }
