@@ -1,4 +1,5 @@
 ﻿using cSharpIntroWinForms.P8;
+using cSharpIntroWinForms.P9;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,9 @@ namespace cSharpIntroWinForms
 {
     public partial class KorisniciAdmin : Form
     {
+
+        KonekcijaNaBazu konekcijaNaBazu = new KonekcijaNaBazu();
+
         public KorisniciAdmin()
         {
             InitializeComponent();
@@ -40,8 +44,15 @@ namespace cSharpIntroWinForms
 
         private void LoadData(List<Korisnik> korisnici = null)
         {
-            dgvKorisnici.DataSource = null;
-            dgvKorisnici.DataSource = korisnici ?? DBInMemory.RegistrovaniKorisnici;
+            try
+            {
+                dgvKorisnici.DataSource = null;
+                dgvKorisnici.DataSource = korisnici ?? konekcijaNaBazu.Korisnici.ToList();  // DBInMemory.RegistrovaniKorisnici;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " " + ex.InnerException?.Message);
+            }
         }
 
         private void txtPretraga_ver1_TextChanged(object sender, EventArgs e)
