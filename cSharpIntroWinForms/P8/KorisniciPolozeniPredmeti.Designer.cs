@@ -33,6 +33,9 @@
             this.dtpDatumPolaganja = new System.Windows.Forms.DateTimePicker();
             this.btnDodajPolozeni = new System.Windows.Forms.Button();
             this.dgvPolozeniPredmeti = new System.Windows.Forms.DataGridView();
+            this.Predmet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPolozeniPredmeti)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,11 +73,41 @@
             // 
             // dgvPolozeniPredmeti
             // 
+            this.dgvPolozeniPredmeti.AllowUserToAddRows = false;
+            this.dgvPolozeniPredmeti.AllowUserToDeleteRows = false;
             this.dgvPolozeniPredmeti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPolozeniPredmeti.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Predmet,
+            this.Ocjena,
+            this.Datum});
             this.dgvPolozeniPredmeti.Location = new System.Drawing.Point(12, 36);
             this.dgvPolozeniPredmeti.Name = "dgvPolozeniPredmeti";
+            this.dgvPolozeniPredmeti.ReadOnly = true;
             this.dgvPolozeniPredmeti.Size = new System.Drawing.Size(644, 202);
             this.dgvPolozeniPredmeti.TabIndex = 4;
+            // 
+            // Predmet
+            // 
+            this.Predmet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Predmet.DataPropertyName = "Predmet";
+            this.Predmet.HeaderText = "Predmet";
+            this.Predmet.Name = "Predmet";
+            this.Predmet.ReadOnly = true;
+            // 
+            // Ocjena
+            // 
+            this.Ocjena.DataPropertyName = "Ocjena";
+            this.Ocjena.HeaderText = "Ocjena";
+            this.Ocjena.Name = "Ocjena";
+            this.Ocjena.ReadOnly = true;
+            // 
+            // Datum
+            // 
+            this.Datum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Datum.DataPropertyName = "Datum";
+            this.Datum.HeaderText = "Datum";
+            this.Datum.Name = "Datum";
+            this.Datum.ReadOnly = true;
             // 
             // KorisniciPolozeniPredmeti
             // 
@@ -105,5 +138,8 @@
         private System.Windows.Forms.DateTimePicker dtpDatumPolaganja;
         private System.Windows.Forms.Button btnDodajPolozeni;
         private System.Windows.Forms.DataGridView dgvPolozeniPredmeti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Predmet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ocjena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
     }
 }

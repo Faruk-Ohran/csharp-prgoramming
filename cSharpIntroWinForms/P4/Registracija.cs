@@ -1,4 +1,5 @@
-﻿using cSharpIntroWinForms.P9;
+﻿using cSharpIntroWinForms.P10;
+using cSharpIntroWinForms.P9;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace cSharpIntroWinForms
     {
         private Korisnik korisnik;
         public bool Edit { get; set; }
-        KonekcijaNaBazu konekcijaNaBazu = new KonekcijaNaBazu();
+        KonekcijaNaBazu konekcijaNaBazu = DLWMS.DB;
         public Registracija()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace cSharpIntroWinForms
                 txtKorisnickoIme.Text = korisnik.KorisnickoIme;
                 txtLozinka.Text = korisnik.Lozinka;
                 pbSlikaKorisnika.Image = ImageHelper.FromByteToImage(korisnik.Slika);
-                cmbSpol.SelectedItem = korisnik.Spol;
+                cmbSpol.SelectedValue = korisnik.Spol.Id;
                 cbAdmin.Checked = korisnik.Admin;
             }
             catch (Exception ex)
@@ -58,7 +59,7 @@ namespace cSharpIntroWinForms
                 korisnik.KorisnickoIme = txtKorisnickoIme.Text;
                 korisnik.Lozinka = txtLozinka.Text;
                 korisnik.Slika = ImageHelper.FromImageToByte(pbSlikaKorisnika.Image);
-                korisnik.Spol = cmbSpol.SelectedItem.ToString();
+                korisnik.Spol = cmbSpol.SelectedItem as Spolovi;
                 korisnik.Admin = cbAdmin.Checked;
 
                 if (!Edit) {
@@ -121,12 +122,22 @@ namespace cSharpIntroWinForms
 
         private void Registracija_Load(object sender, EventArgs e)
         {
-            txtLozinka.Text = GenerisiLozinku(12);
+            if(!Edit)
+                txtLozinka.Text = GenerisiLozinku(12);
         }
 
         private void UcitajSpolove()
         {
-            cmbSpol.DataSource = DBInMemory.Spolovi;
+            try
+            {
+                cmbSpol.DataSource = konekcijaNaBazu.Spolovi.ToList();// DBInMemory.Spolovi;
+                cmbSpol.DisplayMember = "Naziv";
+                cmbSpol.ValueMember = "Id";
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

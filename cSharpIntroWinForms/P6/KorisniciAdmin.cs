@@ -1,4 +1,5 @@
-﻿using cSharpIntroWinForms.P8;
+﻿using cSharpIntroWinForms.P10;
+using cSharpIntroWinForms.P8;
 using cSharpIntroWinForms.P9;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace cSharpIntroWinForms
     public partial class KorisniciAdmin : Form
     {
 
-        KonekcijaNaBazu konekcijaNaBazu = new KonekcijaNaBazu();
+        KonekcijaNaBazu konekcijaNaBazu = DLWMS.DB;
 
         public KorisniciAdmin()
         {

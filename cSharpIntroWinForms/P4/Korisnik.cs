@@ -1,4 +1,5 @@
-﻿using cSharpIntroWinForms.P7;
+﻿using cSharpIntroWinForms.P10;
+using cSharpIntroWinForms.P7;
 using cSharpIntroWinForms.P8;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,12 @@ namespace cSharpIntroWinForms
         //public Image Slika { get; set; }
         public byte[] Slika { get; set; }
 
-        public string Spol { get; set; }
+        public virtual Spolovi Spol { get; set; }
+        //public string Spol { get; set; }
         public bool Admin { get; set; }
         public List<PolozeniPredmet> Polozeni { get; set; } = new List<PolozeniPredmet>();
+        public virtual List<KorisniciPredmeti> Uspjeh { get; set; } = new List<KorisniciPredmeti>();
+
 
         public override string ToString()
         {
