@@ -19,3 +19,4 @@ C:\Users\online\Desktop\PRIII\cSharpIntro\obj\Debug\netcoreapp3.0\cSharpIntro.As
 C:\Users\online\Desktop\PRIII\cSharpIntro\obj\Debug\netcoreapp3.0\cSharpIntro.AssemblyInfo.cs
 C:\Users\online\Desktop\PRIII\cSharpIntro\obj\Debug\netcoreapp3.0\cSharpIntro.dll
 C:\Users\online\Desktop\PRIII\cSharpIntro\obj\Debug\netcoreapp3.0\cSharpIntro.pdb
+C:\Users\online\Desktop\PRIII\cSharpIntro\obj\Debug\netcoreapp3.0\cSharpIntro.csprojAssemblyReference.cache
