@@ -10,14 +10,14 @@
         "projectUniqueName": "C:\\Users\\online\\Desktop\\PRIII\\cSharpIntro\\cSharpIntro.csproj",
         "projectName": "cSharpIntro",
         "projectPath": "C:\\Users\\online\\Desktop\\PRIII\\cSharpIntro\\cSharpIntro.csproj",
-        "packagesPath": "C:\\Users\\online\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\online\\Desktop\\PRIII\\cSharpIntro\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\online\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\denis\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

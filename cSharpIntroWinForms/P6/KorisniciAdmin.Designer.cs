@@ -37,6 +37,7 @@
             this.KorisnickoIme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Admin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Polozeni = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Print = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             this.Spol,
             this.KorisnickoIme,
             this.Admin,
-            this.Polozeni});
+            this.Polozeni,
+            this.Print});
             this.dgvKorisnici.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvKorisnici.Location = new System.Drawing.Point(12, 41);
             this.dgvKorisnici.Name = "dgvKorisnici";
@@ -118,6 +120,13 @@
             this.Polozeni.Text = "Polozeni";
             this.Polozeni.UseColumnTextForButtonValue = true;
             // 
+            // Print
+            // 
+            this.Print.HeaderText = "Print";
+            this.Print.Name = "Print";
+            this.Print.Text = "Print";
+            this.Print.UseColumnTextForButtonValue = true;
+            // 
             // KorisniciAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,5 +156,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn KorisnickoIme;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Admin;
         private System.Windows.Forms.DataGridViewButtonColumn Polozeni;
+        private System.Windows.Forms.DataGridViewButtonColumn Print;
     }
 }

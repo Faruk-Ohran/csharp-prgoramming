@@ -15,7 +15,6 @@ C:\Users\online\Desktop\PRIII\cSharpIntro\bin\Debug\netcoreapp3.0\cSharpIntro.ru
 C:\Users\online\Desktop\PRIII\cSharpIntro\bin\Debug\netcoreapp3.0\cSharpIntro.runtimeconfig.dev.json
 C:\Users\online\Desktop\PRIII\cSharpIntro\bin\Debug\netcoreapp3.0\cSharpIntro.dll
 C:\Users\online\Desktop\PRIII\cSharpIntro\bin\Debug\netcoreapp3.0\cSharpIntro.pdb
-C:\Users\online\Desktop\PRIII\cSharpIntro\obj\Debug\netcoreapp3.0\cSharpIntro.csprojAssemblyReference.cache
 C:\Users\online\Desktop\PRIII\cSharpIntro\obj\Debug\netcoreapp3.0\cSharpIntro.AssemblyInfoInputs.cache
 C:\Users\online\Desktop\PRIII\cSharpIntro\obj\Debug\netcoreapp3.0\cSharpIntro.AssemblyInfo.cs
 C:\Users\online\Desktop\PRIII\cSharpIntro\obj\Debug\netcoreapp3.0\cSharpIntro.dll

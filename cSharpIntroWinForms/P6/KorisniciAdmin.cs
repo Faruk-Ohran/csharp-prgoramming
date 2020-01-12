@@ -1,4 +1,5 @@
 ﻿using cSharpIntroWinForms.P10;
+using cSharpIntroWinForms.P11;
 using cSharpIntroWinForms.P8;
 using cSharpIntroWinForms.P9;
 using System;
@@ -88,7 +89,9 @@ namespace cSharpIntroWinForms
             if (korisnik != null)
             {
                 if (e.ColumnIndex == 5) 
-                    forma = new KorisniciPolozeniPredmeti(korisnik);                    
+                    forma = new KorisniciPolozeniPredmeti(korisnik);
+                else if (e.ColumnIndex == 6)
+                    forma = new Izvjestaji(korisnik);
                 else 
                     forma = new Registracija(korisnik);
                 forma.ShowDialog();                
